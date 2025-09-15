@@ -1,5 +1,5 @@
 const btn = document.getElementById('button');
-
+const form = document.getElementById("myForm");
 document.getElementById('myForm')
     .addEventListener('submit', function (event) {
         event.preventDefault()
