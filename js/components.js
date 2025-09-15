@@ -2,7 +2,7 @@ $().ready(() => {
     fetch('../nav.html')
         .then(response => response.text())
         .then((data) => {
-            $(".nav").replaceWith(data);
+            $(".mNav").replaceWith(data);
         });
 });
 console.log(window.location.pathname);
