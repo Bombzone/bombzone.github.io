@@ -4,10 +4,10 @@ document.getElementById('myForm')
     .addEventListener('submit', function (event) {
         event.preventDefault()
         if (!form.checkValidity()) {
+            alert("Failed to send")
             event.stopPropagation()
         } else {
 
-            form.classList.add('was-validated')
 
             btn.value = 'Sending...';
 
@@ -23,4 +23,6 @@ document.getElementById('myForm')
                     alert(JSON.stringify(err));
                 });
         }
+        form.classList.add('was-validated')
+
     });
