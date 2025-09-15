@@ -11868,8 +11868,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.bi {
+body .bi {
   font-size: 64pt;
+}
+
+body * .bi {
+  font-size: inherit;
 }
 
 /*# sourceMappingURL=custom.css.map */
