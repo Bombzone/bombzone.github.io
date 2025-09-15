@@ -21,7 +21,12 @@ document.getElementById('myForm')
                 }, (err) => {
                     btn.value = 'Send Email';
                     alert(JSON.stringify(err));
+                }).then(() => {
+                    form.reset();
+                    form.classList.remove("was-validated");
                 });
+
+
         }
         form.classList.add('was-validated')
 
