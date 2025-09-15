@@ -15,7 +15,8 @@
     <body class="">
         <div class="mNav"></div>
         <div class="container-lg">
-            <form id="myForm" novalidate class="row g-3 needs-validation" action="https://formspree.io/f/xnnbyply" method="POST">
+            <form id="myForm" novalidate class="row g-3 needs-validation" action="https://formspree.io/f/xnnbyply"
+                method="POST">
                 <div class="mb-3">
                     <label for="formControlInput1" class="form-label">Email address</label>
                     <input required aria-required="true"
@@ -35,8 +36,9 @@
                         rows="3"></textarea>
                     <div class="invalid-feedback"> Please enter a valid message. </div>
                 </div>
-                <button class="g-recaptcha btn btn-primary" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks" data-callback="onSubmit"
-                    data-action="submit" type="submit"> Send! </button>
+                <div class="g-recaptcha" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks"></div>
+                <button class="g-recaptcha btn btn-primary" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks"
+                    data-callback="onSubmit" data-action="submit" type="submit"> Send! </button>
                 <p id="my-form-status"></p>
                 <script src="https://www.google.com/recaptcha/api.js" async defer>
                 </script>
