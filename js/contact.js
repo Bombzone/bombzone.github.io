@@ -1,7 +1,6 @@
 // scripts.js
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-    'use strict'
+'use strict'
     const contactForm = document.getElementById("contact-form")
     const status = document.getElementById("status")
 
@@ -47,4 +46,3 @@
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     // Loop over them and prevent submission
-})()
