@@ -1,6 +1,6 @@
 const form = document.getElementById('myForm');
-
-form.addEventListener('submit', function(event) {
+const formBtn = document.getElementById("formBtn");
+formBtn.addEventListener('click', function(event) {
 
   if (form.checkValidity()) {
     form.classList.add('was-validated');
