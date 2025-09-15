@@ -9,39 +9,53 @@
         <script src="./js/bootstrap.bundle.min.js"></script>
         <script src="./js/components.js"></script>
         <script src="https://unpkg.com/smtp.js/dist/smtp.min.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="./js/contact.js"></script>
+        <script src="./js/contact.js" defer></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     </head>
     <body class="">
         <div class="mNav"></div>
         <div class="container-lg">
-            <form id="myForm" novalidate class="row g-3 needs-validation" action="https://formspree.io/f/xnnbyply"
-                method="POST">
+            <form id="myForm" novalidate class="row g-3 needs-validation">
                 <div class="mb-3">
                     <label for="formControlInput1" class="form-label">Email address</label>
-                    <input required aria-required="true"
+                    <input required aria-required="true" name="email"
                         pattern='(?:[a-z0-9!#$%&*+\x2f=?^_\x7b-\x7d~\x2d]+(?:\.[a-z0-9!#$%&*+\x2f=?^_\x7b-\x7d~\x2d]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9\x2d]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\x2d]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9\x2d]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])'
                         type="email" class="form-control" id="formControlInput1" placeholder="name@example.com">
-                    <div class="invalid-feedback" name="email"> Please enter a valid email. </div>
+                    <div class="invalid-feedback"> Please enter a valid email. </div>
                 </div>
                 <div class="mb-3">
                     <label for="formControlInput2" class="form-label">name</label>
                     <input required aria-required="true" type="name" class="form-control" id="formControlInput2"
-                        placeholder="Your Name" name="name" >
+                        placeholder="Your Name" name="name">
                     <div class="invalid-feedback"> Please enter your name. </div>
                 </div>
                 <div class="mb-3">
+                    <label for="subject">Subject</label>
+                    <input class="form-control" type="text" name="subject" id="subject">
+                </div>
+                <div class="mb-3">
                     <label for="formControlTextarea1" class="form-label">Message</label>
-                    <textarea required aria-required="true" class="form-control form" id="formControlTextarea1"
-                        rows="3" name="message"></textarea>
+                    <textarea required aria-required="true" class="form-control form" id="formControlTextarea1" rows="3"
+                        name="message"></textarea>
                     <div class="invalid-feedback"> Please enter a valid message. </div>
                 </div>
-                <div class="g-recaptcha" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks"></div>
-                <button class="btn btn-primary" id="formBtn" type="button"> Send! </button>
-                <p id="my-form-status"></p>
-                <script src="https://www.google.com/recaptcha/api.js" async defer>
-                </script>
+                <div class="g-recaptcha" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks" data-action="CONTACT">
+                </div>
+                <div name="g-recaptcha-response" id="response"> </div>
+                <br />
+                <button class="btn btn-primary" id="button" type="submit"> Send Email </button>
             </form>
         </div>
+        <script>
+            var onloadCallback = function () {
+                grecaptcha.render(document.getElementById("response"), {
+                    'sitekey': '6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks'
+                });
+            };
+        </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            emailjs.init('W1hYp8DrV2SzsHJ7_')
+        </script>
     </body>
 </html>
