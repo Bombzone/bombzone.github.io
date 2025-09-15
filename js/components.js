@@ -8,28 +8,29 @@ $().ready(() => {
 console.log(window.location.pathname);
 
 
-switch (window.location.pathname) {
+switch (window.location.pathname.split(".")[0].toLowerCase()) {
     case "/":
-    case "/index.html":
+    case "/index":
         $("#home").addClass('active').attr("aria-current", "page");
         break
-    case "/about.html":
+    case "/about":
         $("#about").addClass('active').attr("aria-current", "page");
 
         break;
-    case "/projects.html":
+    case "/projects":
         $("#projects").addClass('active').attr("aria-current", "page");
 
         break;
-    case "/accomplishments.html":
+    case "/accomplishments":
         $("#accomplishments").addClass('active').attr("aria-current", "page");
 
         break;
-    case "/resume.html":
+    case "/resume":
         $("#resume").addClass('active').attr("aria-current", "page");
 
         break;
-    case "/contact.html":
+    case "/contact":
+        $("#contact").addClass('active').attr("aria-current", "page");
 
         break;
     default:
