@@ -2,22 +2,10 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
-    var onSubmit = function (token) {
-        console.log('success!');
-    };
-
-    var onloadCallback = function () {
-        grecaptcha.render('submit', {
-            'sitekey': '6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks',
-            'callback': onSubmit
-        });
-    };
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const contactForm = document.getElementById("contact-form")
     const status = document.getElementById("status")
-    // Loop over them and prevent submission
-    contactForm.addEventListener('submit', event => {
+
+    var onSubmit = function (token) {
         if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
@@ -48,5 +36,15 @@
 
         form.classList.add('was-validated')
 
-    }, false)
+    };
+
+    var onloadCallback = function () {
+        grecaptcha.render('submit', {
+            'sitekey': '6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks',
+            'callback': onSubmit
+        });
+    };
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    // Loop over them and prevent submission
 })()
