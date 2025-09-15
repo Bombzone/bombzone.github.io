@@ -42,7 +42,7 @@ const renderPage = () => {
 
 // Load the Document
 pdfjsLib
-  .getDocument({pdf})
+  .getDocument(pdf)
   .promise.then((data) => {
     initialState.pdfDoc = data;
     console.log('pdfDocument', initialState.pdfDoc);
