@@ -10,7 +10,7 @@
         <script src="./js/components.js"></script>
         <script src="https://unpkg.com/smtp.js/dist/smtp.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="./js/contact.js"></script>
+        <script src="./js/contact.js" defer></script>
     </head>
     <body class="">
         <div class="mNav"></div>
@@ -35,12 +35,10 @@
                         rows="3"></textarea>
                     <div class="invalid-feedback"> Please enter a valid message. </div>
                 </div>
-                <button type="button" class="g-recaptcha" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks"
-                    data-callback="onSubmit">Submit</button>
-                <br />
-                <button class="btn" id="submit" type="submit">Send!</button>
+                <button class="g-recaptcha btn btn-primary" data-sitekey="6Le-8ckrAAAAALzGSEXhIYFFUwtO4NT8K5o6XCks" data-callback="onSubmit"
+                    data-action="submit" type="submit"> Send! </button>
                 <p id="my-form-status"></p>
-                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+                <script src="https://www.google.com/recaptcha/api.js" async defer>
                 </script>
             </form>
         </div>
