@@ -12,7 +12,7 @@ const initialState = {
   pdfDoc: null,
   currentPage: 1,
   pageCount: 0,
-  zoom: 1,
+  zoom: window.devicePixelRatio || 1,
 };
 
 // Render the page
@@ -20,10 +20,15 @@ const renderPage = () => {
   // load the first page
   initialState.pdfDoc.getPage(initialState.currentPage).then((page) => {
     console.log('page', page);
-
     const canvas = document.querySelector('#canvas');
+    const style = window.getComputedStyle(document.getElementById("canvas"));
+    const margin = style.marginLeft.split("px")[0];    
+
     const ctx = canvas.getContext('2d');
-    const viewport = page.getViewport({ scale: initialState.zoom });
+    const width = window.innerWidth - margin;
+    const initialVP = page.getViewport({ scale: 1, });
+    const scale = width / initialVP.width;
+    const viewport = page.getViewport({ scale: scale, });
 
     canvas.height = viewport.height;
     canvas.width = viewport.width;
