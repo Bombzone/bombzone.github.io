@@ -11876,4 +11876,16 @@ body * .bi {
   font-size: inherit;
 }
 
+a {
+  color: initial;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.max-width-100 {
+  max-width: 100%;
+}
+
 /*# sourceMappingURL=custom.css.map */
