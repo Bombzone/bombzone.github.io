@@ -12,34 +12,7 @@
   </head>
   <body>
     <div class="mNav"></div>
-    <div class="container w-100 overflow-x-hidden">
-      <ul class=" nav
-          nav-tabs
-          d-flex
-          justify-content-center
-          align-items-center
-          p-3
-        ">
-        <li class="nav-item d-none">
-          <a href="#" class="p-1 border rounded-circle" id="prev_page" title="previous page" data-bs-toggle="tooltip"
-            data-bs-placement="bottom">
-            <i class="bi bi-chevron-left"></i></a>
-          <input type="number" id="current_page" value="1" class="d-inline form-control" />
-          <a href="#" class="p-1 border rounded-circle" id="next_page" data-bs-toggle="tooltip"
-            data-bs-placement="bottom" title="next page"><i class="bi bi-chevron-right"></i></a>
-          <!-- page 1 of 5 --> Page <span id="page_num"></span> of <span id="page_count"></span>
-        </li>
-        <li class="nav-item">
-          <button class="rounded-circle p-2 border-0 btn" id="zoom_in" data-bs-toggle="tooltip"
-            data-bs-placement="bottom" title="zoom in">
-            <i class="bi bi-zoom-in"></i>
-          </button>
-          <button class="rounded-circle p-2 border-0 btn" id="zoom_out" data-bs-toggle="tooltip"
-            data-bs-placement="bottom" title="zoom out">
-            <i class="bi bi-zoom-out"></i>
-          </button>
-        </li>
-      </ul>
+    <div class="container vw-100 overflow-x-hidden">
       <!-- canvas to place the PDF -->
       <a download href="./resume.pdf" class="text-decoration-none">Download <i class="bi-download"></i></a>
       <canvas id="canvas" class="
@@ -47,8 +20,7 @@
           flex-column
           justify-content-center
           align-items-center
-          mx-auto
-          ">
+          w-100">
       </canvas>
     </div>
     <!-- PDF.js CDN -->
