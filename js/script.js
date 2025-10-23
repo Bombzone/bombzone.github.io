@@ -1,4 +1,4 @@
-const pdf = '/resume.pdf';
+const pdf = '../resume.pdf';
 
 const initialState = {
   pdfDoc: null,
