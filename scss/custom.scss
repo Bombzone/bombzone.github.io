@@ -1,7 +1,7 @@
 @font-face {
   font-family: code;
   font-display: swap;
-  src: url(../fonts/GoogleSansCode-VariableFont_wght.ttf);
+  src: url(./fonts/GoogleSansCode-VariableFont_wght.ttf);
 }
 
 button.navbar-toggler {
@@ -71,7 +71,7 @@ $font-family-base: code;
 
 
 // 5. Add additional custom code here
-@import url(../node_modules/bootstrap-icons/font/bootstrap-icons.scss);
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons";
 
 body .bi {
   font-size: 64pt;
