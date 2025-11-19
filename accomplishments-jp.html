@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Code-folio | Accomplishments</title>
+        <script src="./js/jquery-3.7.1.js"></script>
+        <link href="./css/custom.css" rel="stylesheet">
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/components.js"></script>
+    </head>
+    <body class="text-primary">
+        <div class="container-lg">
+            <h1 class="text-center">My Accomplishments</h1>
+            <div class="text-center mb-3">
+                <div class="">
+                    <p>In 2024, I signed up for a national organization known as SkillsUSA.</p>
+                    <img src="./images/SkillsState.jpg" class="d-block w-100"
+                        alt="SkillsUSA Idaho award ceremony">
+                    <p> However, I did not know I was the best competitor in Idaho for Web Design &amp; Development that year.
+                    </p>
+                </div>
+                <hr>
+                <div class="">
+                    <p>Since I was the winner of the competition in Idaho, I continued to nationals which was held in
+                        Atlanta, Georgia.</p>
+                    <img src="./images/Skills.jpg" class="d-block w-100" alt="SkillsUSA Nationals award ceremony">
+                    <p>I placed third at the national level competition.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 position-fixed bottom-0">
+            <div class="progress" role="progressbar" aria-label="Scroll Progress" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        window.addEventListener("scroll", function (event) {
+            const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+            let scroll_y = this.scrollY / maxScrollY * 100;
+            document.getElementById("progress").setAttribute("style", `width: ${scroll_y}%`)
+        });
+    </script>
+</html>
